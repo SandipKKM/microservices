@@ -1,0 +1,27 @@
+package com.microservice.oderservice.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.microservice.oderservice.common.Payment;
+import com.microservice.oderservice.common.TransactionRequest;
+import com.microservice.oderservice.common.TransactionResponse;
+import com.microservice.oderservice.entity.Order;
+import com.microservice.oderservice.service.OrderService;
+
+@RestController
+@RequestMapping("/order")
+public class OrderController {
+	
+   @Autowired
+   private OrderService orderService;
+   
+   @PostMapping("/add")
+   public TransactionResponse saveOrder(@RequestBody TransactionRequest request) {
+	   return orderService.saveOrder(request);
+   }
+	
+}

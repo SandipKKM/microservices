@@ -1,0 +1,5 @@
+package com.microservice.oderservice.common;
+
+public class TransactionRequest {
+
+}

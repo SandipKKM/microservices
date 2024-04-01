@@ -1,0 +1,5 @@
+package com.microservice.paymentservice.entity;
+
+public class Payment {
+
+}

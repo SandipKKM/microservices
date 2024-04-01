@@ -1,0 +1,19 @@
+package com.cloudgetway.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import reactor.core.publisher.Mono;
+
+@RestController
+public class FollbackController {
+ 
+	@GetMapping("/orderFallBack")
+	public Mono<String> orderServiceFallBack(){
+		return Mono.just("Order Service taking to long time to resposne or it down, Please try again later ");
+	}
+	@GetMapping("/paymentFallBack")
+	public Mono<String> paymentServiceFallBack(){
+		return Mono.just("Order Service taking to long time to resposne or it down, Please try again later ");
+	}
+}

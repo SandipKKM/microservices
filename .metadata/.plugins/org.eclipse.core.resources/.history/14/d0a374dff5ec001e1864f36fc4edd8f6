@@ -1,0 +1,25 @@
+package com.microservice.oderservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.microservice.oderservice.common.Payment;
+import com.microservice.oderservice.common.TransactionRequest;
+import com.microservice.oderservice.entity.Order;
+import com.microservice.oderservice.repository.OrderRepository;
+
+@Service
+public class OrderService {
+  
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	public Order saveOrder(TransactionRequest request) {
+		 Order order = request.getOrder();
+		   Payment payment = request.getPayment();
+		   payment.setOderId(order.getId());
+		   payment.setAmount(order.getPrice());
+		return orderRepository.save(r);
+		
+	} 
+}

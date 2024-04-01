@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="CommitDialog.authorValues">
+		<item value="sandip krishna mulmule &lt;sandip7991@gmail.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="sandip krishna mulmule &lt;sandip7991@gmail.com&gt;"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\Tast\git\repository\.git">
+			<item value="false"/>
+			<item value="sandip krishna mulmule &lt;sandip7991@gmail.com&gt;"/>
+			<item value="&#x0D;&#x0A;Signed-off-by: sandip krishna mulmule &lt;sandip7991@gmail.com&gt;"/>
+			<item value="sandip krishna mulmule &lt;sandip7991@gmail.com&gt;"/>
+			<item value="c1ea592e95dd5a9efcaa337cee94f572a88f18b8"/>
+			<item value="0"/>
+			<item value="true"/>
+			<item value=""/>
+		</list>
+	</section>
+</section>

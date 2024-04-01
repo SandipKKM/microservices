@@ -1,0 +1,34 @@
+package com.microservice.oderservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.microservice.oderservice.common.Payment;
+import com.microservice.oderservice.common.TransactionRequest;
+import com.microservice.oderservice.common.TransactionResponse;
+import com.microservice.oderservice.entity.Order;
+import com.microservice.oderservice.repository.OrderRepository;
+
+@Service
+public class OrderService {
+  
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	public TransactionResponse saveOrder(TransactionRequest request) {
+		String msg;
+		 Order order = request.getOrder();
+		   Payment payment = request.getPayment();
+		   payment.setOderId(order.getId());
+		   payment.setAmount(order.getPrice());
+		  
+		  Payment paymentRspnse = restTemplate.postForObject("http://localhost:8082/payment/doPayment",payment,Payment.class);
+		  msg = paymentRspnse.getPaymentStatus().equals("success")?"Payment Done order booked successfully":"Payment order added to cart";
+		
+		 return new TransactionResponse(order,paymentRspnse.getTransactionId(), paymentRspnse.getAmount(), msg);
+	} 
+}

@@ -1,0 +1,21 @@
+package com.microservice.oderservice.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Order {
+	
+	private int id;
+	private String name;
+	private int qty;
+	private double prince;
+
+}
